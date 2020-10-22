@@ -33,6 +33,6 @@ jobs:
         uses: CycloneDX/gh-python-generate-sbom@v1
         with:
           # The path to a pip requirements file
-          # input: # optional, default is ./requirements.txt
+          input: "./requirements.txt"
            # Output filename
           output: "./bom.xml" # optional, default is ./bom.xml

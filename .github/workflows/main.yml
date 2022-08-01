@@ -30,7 +30,7 @@ jobs:
       - name: CycloneDX Python Generate SBOM
        # You may pin to the exact commit or the version.
        # uses: CycloneDX/gh-python-generate-sbom@2c8992551f92db312c04cc84f90202797ff398f2
-        uses: CycloneDX/gh-python-generate-sbom@v1
+        uses: CycloneDX/gh-python-generate-sbom@v1.0.1
         with:
           # The path to a pip requirements file
           input: "./requirements.txt"

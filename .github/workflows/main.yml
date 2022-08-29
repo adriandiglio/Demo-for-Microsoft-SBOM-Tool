@@ -17,7 +17,7 @@ jobs:
       steps:
         - uses: philips-software/sbom-tool-installer-action@v1.0.0
         - run: |
-            sbom-tool -h
+            sbom-tool generate -b ./buildOutput -bc . -pn test -pv 1.0.0 -nsb https://eccouncil.org/SBOMdemo
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on

@@ -43,6 +43,6 @@ jobs:
            # Output filename
           output: "./bom.xml" # optional, default is ./bom.xml
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.1.0 
         with:
           path: buildOutput

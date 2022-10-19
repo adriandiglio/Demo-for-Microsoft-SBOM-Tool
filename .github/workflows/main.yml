@@ -29,7 +29,7 @@ jobs:
         run: |
           curl -Lo $RUNNER_TEMP/sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64
           chmod +x $RUNNER_TEMP/sbom-tool
-          $RUNNER_TEMP/sbom-tool generate -b /home/runner/work/General/General/ -bc . -pn Test -pv 1.0.0 -ps Adrian_Diglio -nsb http://sysinternals/ -v Verbose
+          $RUNNER_TEMP/sbom-tool generate -b /home/runner/work/General/ -bc . -pn Test -pv 1.0.0 -ps Adrian_Diglio -nsb http://sysinternals/ -v Verbose
           ls /home/runner/work/General/General/_manifest/spdx_2.2/
           cat /home/runner/work/General/General/_manifest/spdx_2.2/manifest.spdx.json
       # Runs a single command using the runners shell

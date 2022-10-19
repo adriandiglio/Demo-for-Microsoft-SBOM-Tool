@@ -20,18 +20,21 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: setup python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.8 #install the python needed
+          python-version: 3.10 #install the python needed
+      - name: Create directory path
+        run: mkdir -p ./buildOutput
+
       - name: Generate SBOM
         run: |
           curl -Lo $RUNNER_TEMP/sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64
           chmod +x $RUNNER_TEMP/sbom-tool
-          $RUNNER_TEMP/sbom-tool generate -b /home/runner/work/General/ -bc . -pn Test -pv 1.0.0 -ps Adrian_Diglio -nsb http://sysinternals/ -v Verbose
-          ls /home/runner/work/General/General/_manifest/spdx_2.2/
-          cat /home/runner/work/General/General/_manifest/spdx_2.2/manifest.spdx.json
+          $RUNNER_TEMP/sbom-tool generate -b ./buildOutput -bc . -pn Test -pv 1.0.0 -ps Adrian_Diglio -nsb http://sysinternals/ -v Verbose
+          ls ./buildOutput/_manifest/spdx_2.2/
+          cat ./buildOutput/_manifest/spdx_2.2/manifest.spdx.json
       # Runs a single command using the runners shell
       - name: CycloneDX Python Generate SBOM
        # You may pin to the exact commit or the version.

@@ -24,7 +24,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10 #install the python needed
+          python-version: 3.8 #install the python needed
       - name: Create directory path
         run: mkdir -p ./buildOutput
 

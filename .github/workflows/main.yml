@@ -55,7 +55,7 @@ jobs:
       - name: Generate artifact attestation
        uses: actions/attest-build-provenance@v2
        with:
-          subject-path: './buildOutput
+          subject-path: './buildOutput'
            
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.0 

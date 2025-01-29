@@ -54,7 +54,7 @@ jobs:
           # Path to the artifact serving as the subject of the attestation. Must specify exactly one of "subject-path", "subject-digest", or "subject-checksums". May contain a glob pattern or list of paths (total subject count cannot exceed 1024).
           subject-path: ./buildOutput
           # Digest of the subject for which provenance will be generated. Must be in the form "algorithm:hex_digest" (e.g. "sha256:abc123..."). Must specify exactly one of "subject-path", "subject-digest", or "subject-checksums".
-          subject-digest: ${{ env.steps.build.outputs.digest }}
+          subject-digest: ${{ env.steps.build-and-push.outputs.digest }}
           # Subject name as it should appear in the attestation. Required when identifying the subject with the "subject-digest" input.
           subject-name: Demo-for-Microsoft-SBOM-Tool
           # Path to checksums file containing digest and name of subjects for attestation. Must specify exactly one of "subject-path", "subject-digest", or "subject-checksums".

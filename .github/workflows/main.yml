@@ -38,13 +38,15 @@ jobs:
       # Runs a single command using the runners shell
       - name: CycloneDX Python Generate SBOM
        # You may pin to the exact commit or the version.
-       # uses: CycloneDX/gh-python-generate-sbom@2c8992551f92db312c04cc84f90202797ff398f2
-        uses: CycloneDX/gh-python-generate-sbom@v1.0.1
+       # uses: CycloneDX/gh-python-generate-sbom@39fe80937489538e12de5a7b427e078649ec44bb
+        uses: CycloneDX/gh-python-generate-sbom@v2.0.0
         with:
           # The path to a pip requirements file
           input: "./requirements.txt"
            # Output filename
           output: "./bom.xml" # optional, default is ./bom.xml
+          # Output format
+          format: xml # optional, default is xml
           
       - name: Attest Build Provenance
         uses: actions/attest-build-provenance@v2.2.0

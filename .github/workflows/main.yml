@@ -36,11 +36,13 @@ jobs:
           # sha256sum artifact1 artifact2 ... | base64 -w0
           echo "hashes=$(sha256sum artifact1 artifact2 | base64 -w0)" >> "$GITHUB_OUTPUT"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.8 #install the python needed
+          python-version: '3.8' #install the python needed
+          check-latest: true
 
       - name: Packj Security Audit
         uses: ossillate-inc/packj-github-action@v0.0.10-beta

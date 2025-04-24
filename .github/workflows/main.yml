@@ -42,6 +42,13 @@ jobs:
         with:
           python-version: 3.8 #install the python needed
 
+      - name: Packj Security Audit
+        uses: ossillate-inc/packj-github-action@v0.0.10-beta
+        with:
+          # TODO: replace with your dependency files in the repo
+          DEPENDENCY_FILES: pypi:requirements.txt
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
       - name: Create directory path
         run: mkdir -p ./buildOutput
         
